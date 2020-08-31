@@ -4,11 +4,16 @@ import './app.css';
 import { Route, Switch } from 'react-router-dom';
 import HomePage from '../pages/home-page';
 import CartPage from '../pages/cart-page';
+import ShopHeader from '../shop-header/shop-header';
+import ShoppingCartTable from '../shopping-cart-table/shopping-cart-table';
+
 
 
 const App = () => {  
   
-  return (   
+  return (
+    <main role='main' className='container'> 
+    <ShopHeader numItems={5} total={210} /> 
       <Switch>
         <Route 
         path='/'
@@ -20,7 +25,9 @@ const App = () => {
         component={CartPage}
         exact
         />
-      </Switch>     
+      </Switch>
+      <ShoppingCartTable />
+      </main>    
     )  
 };
 
